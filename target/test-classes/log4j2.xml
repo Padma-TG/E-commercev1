@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- there are two types of logs -->
+<!-- This log file will capture only automation logs(warn,info,fatal),
+your application logs will be captured in debug mode or All and trace -->
+
+<Configuration status="INFO">
+
+    <Properties>
+        <Property name="basePath">./logs</Property>
+        <!-- ./ is representing current project  --> 
+        <!-- [1]Here we are declaring variable,basepath is variable,we can keep any but same name we put in 18line rolling filename 
+         and logs is a folder name we specify -->
+    </Properties>
+    
+    <Appenders>
+    
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        
+        <!-- Writes logs to file and auto-creates new files when full (rolling) -->
+        
+        <RollingFile name="File" fileName="${basePath}/automation.log" filePattern="${basePath}/automation-%d{yyyy-MM-dd}.log">
+        
+        <!-- [1]Here we are using the variable.variable/filename(automation.log) we generate this log file with timestamp,coz everytime
+        it will generate same all entries will be logged in one single log file but if log file size is got exceeded,it will maintain old
+        log file and create new log file,so for that we created timestamp.log.this is the format         -->
+        
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <SizeBasedTriggeringPolicy size="50000" />
+        </RollingFile>
+        
+    </Appenders>
+    <!-- main focus here only -->
+    <Loggers>
+    
+        <Root level="Info"><!-- Here you can use multiple log levels All>Traces>Debug>Info>Warn>Error>Fatal>Off -->
+          <!--    <AppenderRef ref="Console" /> -->
+            <AppenderRef ref="File" />
+        </Root>
+        
+    </Loggers>
+    
+</Configuration>
