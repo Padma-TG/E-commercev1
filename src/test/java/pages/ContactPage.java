@@ -18,6 +18,10 @@ public class ContactPage extends BasePage
 	{
 		closecontactcp.click();
 	}
+	public WebElement closeelem()
+	{
+		return closecontactcp;
+	}
 	
 	public WebElement contactlabel()
 	{

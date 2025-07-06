@@ -15,7 +15,7 @@ import pages.WelcomePage;
 
 public class TC002_LoginTest extends BaseTest
 {
-	@Test(dataProvider="loginData",dataProviderClass=utility.DataProviderC.class)
+	@Test(dataProvider="data",dataProviderClass=utility.DataProviderC.class,groups={"sanity","smoke"})
 	public void verify_login(String testcase,String username,String pwd,String expected)
 	{
 		logger.info("********Starting TC002_LoginTest**********" );

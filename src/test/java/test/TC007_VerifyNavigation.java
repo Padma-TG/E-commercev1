@@ -27,7 +27,7 @@ public class TC007_VerifyNavigation extends BaseTest
 		
 		LoginPage lp=new LoginPage(driver);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.visibilityOf(lp.unameLP()));
+		wait.until(ExpectedConditions.visibilityOf(lp.loginEletitleLP()));
 		lp.login(p.getProperty("validuname"), p.getProperty("validpwd"));
 		WebDriverWait wait1=new WebDriverWait(driver,Duration.ofSeconds(20));
 		wait1.until(ExpectedConditions.invisibilityOf(lp.unameLP()));
@@ -75,7 +75,7 @@ public class TC007_VerifyNavigation extends BaseTest
 		ContactPage cp=new ContactPage(driver);
 
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.visibilityOf(cp.contactlabel()));
+		wait.until(ExpectedConditions.visibilityOf(cp.closeelem()));
 		boolean iscontactlblvsb=cp.iscontlblvisible();
 		cp.clickClose();
 		wp.clickLogoutWPM();

@@ -104,6 +104,8 @@ public class TC005_CategoryProducttest extends BaseTest
 	@Test(priority=3)
 	public void verify_Monitors() throws InterruptedException
 	{
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.visibilityOf(wp.eleMonitors()));
 		wp.clickMonitorsWPM();
 		//Thread.sleep(6000);
 		pp=new PhonesPage(driver);

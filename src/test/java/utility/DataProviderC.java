@@ -6,25 +6,9 @@ import org.testng.annotations.DataProvider;
 
 public class DataProviderC 
 {
-	@DataProvider(name="loginData")
+	@DataProvider(name="data")
 	public Object[][] getLoginData() throws IOException
 	{
 		return ExcelUtility.readExcel("loginData");
 	}
-	@DataProvider(name="mobile")
-	public Object[][] getmobileData() throws IOException
-	{
-		return ExcelUtility.readExcel("Mobile");
-	}
-	@DataProvider(name="Laptop")
-	public Object[][] getlaptopData() throws IOException
-	{
-		return ExcelUtility.readExcel("Laptop");
-	}
-	@DataProvider(name="Monitor")
-	public Object[][] getmonitorData() throws IOException
-	{
-		return ExcelUtility.readExcel("Monitor");
-	}
-
 }

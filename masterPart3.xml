@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+	<listener class-name="utility.ExtentReportUtility"></listener>
+</listeners>
+<parameter name="os" value="windows"/>
+<parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Test">
+    <classes>
+    
+          
+    	  <class name="test.TC009_visibilityofaction"/>
+    	  <class name="test.TC010_FontConsistency"/>
+    	  <class name="test.TC011_TestAlert_PopupStyling"/>
+    	  <class name="test.TC012_ResponsiveTest"/>   	  
+     
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

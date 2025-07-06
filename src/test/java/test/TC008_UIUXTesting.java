@@ -3,6 +3,7 @@ package test;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -127,6 +128,8 @@ public void verify_x()
 		for(int i=0;i<product_cards.size();i++)
 		{
 			WebElement tiles=product_cards.get(i);
+			((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", tiles);
+		    Thread.sleep(500);
 			int actualY=tiles.getLocation().getY();
 		if((i>=0)&&(i<=2))
 		{

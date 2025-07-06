@@ -19,7 +19,7 @@ public class TC004_PlaceOrder extends BaseTest
 {
 	//Place order with valid details
 	//Verify order confirmation popup
-	@Test(priority=1)
+	@Test(priority=1,groups= {"smoke"})
 	public void verify_placeOrder() throws InterruptedException
 	{
 		logger.info("********Starting TC004_PlaceOrder**********" );

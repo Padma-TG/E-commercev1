@@ -21,6 +21,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 public class BaseTest 
@@ -30,8 +31,8 @@ public class BaseTest
 	public Logger logger;
 	
 	@Parameters({"os","browser"})
-	@BeforeClass	
-	public void setup(String os,String br) throws IOException
+	@BeforeClass(groups = {"sanity"})	
+	public void setup(@Optional("windows")String os,String br) throws IOException
 	{
 		FileReader file=new FileReader(".//src//test//resources//config.properties");
 		p=new Properties();

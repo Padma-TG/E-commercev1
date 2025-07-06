@@ -14,7 +14,7 @@ import pages.SignUpPage;
 
 public class TC001_SignUpTest extends BaseTest
 {
-	@Test(priority=1)
+	@Test(priority=1,groups= {"sanity"})
 	public void verify_validsignup()
 	{
 		logger.info("********Starting TC001_SignUpTest**********" );
@@ -36,8 +36,9 @@ public class TC001_SignUpTest extends BaseTest
 	public void invalid_signup() throws InterruptedException
 	{
 		HomePage hp=new HomePage(driver);
+		driver.navigate().refresh();
 		WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.elementToBeClickable(hp.signupbtnelehp()));
+		wait.until(ExpectedConditions.visibilityOfAllElements(hp.getAlleleHP()));
 		hp.clicksignupHPM();
 		
 		SignUpPage sp=new SignUpPage(driver);
@@ -57,8 +58,10 @@ public class TC001_SignUpTest extends BaseTest
 	public void emptyfield_signup()
 	{
 		HomePage hp=new HomePage(driver);
+		driver.navigate().refresh();
+
 		WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.elementToBeClickable(hp.loginelehp()));
+		wait.until(ExpectedConditions.visibilityOfAllElements(hp.getProductTiles()));
 		hp.clicksignupHPM();
 		
 		SignUpPage sp=new SignUpPage(driver);

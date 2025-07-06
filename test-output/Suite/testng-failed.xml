@@ -8,23 +8,14 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test.TC002_LoginTest">
+      <class name="test.TC009_visibilityofaction">
         <methods>
-          <include name="verify_login" invocation-numbers="1 2 3"/>
+          <include name="verify_visibility"/>
           <include name="setup"/>
+          <include name="visibility1"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- test.TC002_LoginTest -->
-      <class name="test.TC008_UIUXTesting">
-        <methods>
-          <include name="setupforui"/>
-          <include name="close"/>
-          <include name="verify_yy"/>
-          <include name="setup"/>
-          <include name="verify_x"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- test.TC008_UIUXTesting -->
+      </class> <!-- test.TC009_visibilityofaction -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
